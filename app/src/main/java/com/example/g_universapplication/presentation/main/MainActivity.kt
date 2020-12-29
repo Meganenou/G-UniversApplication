@@ -1,8 +1,10 @@
 package com.example.g_universapplication.presentation.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import com.example.g_universapplication.ListActivity
 import com.example.g_universapplication.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,8 +34,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        signIN.setOnClickListener {
+        account.setOnClickListener {
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
+        }
+        signIN.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
         }
     }
 }
