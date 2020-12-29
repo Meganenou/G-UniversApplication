@@ -34,10 +34,10 @@ val dataModule = module {
     single { createDatabase(androidContext()) }
 }
 
-fun createDatabase(context: Context){
+fun createDatabase(context: Context) : DatabaseDAO {
     val appDatabase: AppDatabase = Room.databaseBuilder(
         context,
         AppDatabase::class.java, "database-name"
     ).build()
-    appDatabase.databaseDAO()
+    return appDatabase.databaseDAO()
 }

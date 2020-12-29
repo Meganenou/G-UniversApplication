@@ -7,29 +7,27 @@ import com.example.g_universapplication.domain.entities.User
 import com.example.g_universapplication.domain.usecase.CreateUserUseCase
 import com.example.g_universapplication.domain.usecase.GetUserUseCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainViewModel(
     private val createUserUseCase: CreateUserUseCase,
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel(){
 
-    val text: MutableLiveData<String> = MutableLiveData()
+    val loginliveData: MutableLiveData<LoginStatus> = MutableLiveData()
 
-    init {
-        text.value = "Salut"
-    }
-
-    fun onClickedUser(emailUser : String){
-        viewModelScope.launch {Dispatchers.IO
-            createUserUseCase.invoke(
-                User(
-                    "oui"
-                )
-            )
-            val user = getUserUseCase.invoke("oui")
-            val debug = "debug"
+    fun onClickedLogin(emailUser: String, password: String){
+        viewModelScope.launch (Dispatchers.IO) {
+            val user:User? = getUserUseCase.invoke(emailUser)
+            val loginStatus = if(user != null){
+                LoginSuccess(user.email)
+            }else{
+                LoginError
+            }
+            withContext(Dispatchers.Main) {
+                loginliveData.value = loginStatus
+            }
         }
     }
 }

@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".presentation.main.MainActivity"
-    android:background="">
+    android:background="@drawable/main_background">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login"
+
         app:layout_constraintBottom_toTopOf="@+id/password_input_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +25,8 @@
             android:id="@+id/login_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -34,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
+        android:layout_marginTop="20dp"
         app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/login_input_layout"
         app:layout_constraintBottom_toTopOf="@id/signIN"
@@ -55,18 +57,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toTopOf="@id/signUP"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/account"
+        app:layout_constraintLeft_toLeftOf="@+id/account"
+        app:layout_constraintRight_toRightOf="@+id/account"
         app:layout_constraintTop_toBottomOf="@id/password_input_layout"
         />
 
     <Button
-        android:id="@+id/signUP"
-        android:text="@string/sign_up"
+        android:id="@+id/account"
+        android:text="@string/account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

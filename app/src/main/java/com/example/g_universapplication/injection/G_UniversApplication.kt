@@ -10,7 +10,7 @@ class G_UniversApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@G_UniversApplication)
-            modules(presentationModule)
+            modules(presentationModule, domainModule, dataModule)
         }
     }
 }
