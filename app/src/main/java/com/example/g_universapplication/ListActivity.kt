@@ -9,6 +9,5 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        val retrofit = Retrofit.Builder()
     }
 }
