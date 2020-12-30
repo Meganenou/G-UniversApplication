@@ -11,8 +11,8 @@ interface DatabaseDAO {
     @Query("SELECT * FROM userlocal")
     fun getAll(): List<UserLocal>
 
-    @Query("SELECT * FROM userlocal WHERE email LIKE :email LIMIT 1")
-    fun findByName(email: String): UserLocal?
+    @Query("SELECT * FROM userlocal WHERE email LIKE :email AND password LIKE:password")
+    fun findByName(email: String, password : String): UserLocal?
 
     @Insert
     fun insert(user: UserLocal)

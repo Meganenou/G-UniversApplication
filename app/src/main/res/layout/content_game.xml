@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:showIn="@layout/activity_game"
-    tools:context=".GameActivity"
+    android:background="@drawable/main_bg"
+    tools:context=".presentation.main.GameActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 

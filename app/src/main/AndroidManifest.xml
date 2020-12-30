@@ -7,14 +7,14 @@
     <application
         android:name=".injection.G_UniversApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/code_ic"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GUniversApplication">
-        <activity android:name=".Description"></activity>
+        <activity android:name=".presentation.main.AccountActivity" />
+        <activity android:name=".presentation.main.Description" />
         <activity
-            android:name=".GameActivity"
+            android:name=".presentation.main.GameActivity"
             android:label="@string/title_activity_game"
             android:theme="@style/Theme.GUniversApplication.NoActionBar" />
         <activity android:name=".presentation.main.MainActivity">

@@ -1,4 +1,4 @@
-package com.example.g_universapplication
+package com.example.g_universapplication.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log.d
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.g_universapplication.R
 import kotlinx.android.synthetic.main.content_game.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,7 +14,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class GameActivity : AppCompatActivity(), GamesAdapter.OnGameItemClickListener {
+class GameActivity : AppCompatActivity(),
+    GamesAdapter.OnGameItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +45,11 @@ class GameActivity : AppCompatActivity(), GamesAdapter.OnGameItemClickListener {
 
     private fun showData(games: List<Game>) {
         recyclerView.apply {
-            var gameAdapter = GamesAdapter(games,this@GameActivity)
+            var gameAdapter =
+                GamesAdapter(
+                    games,
+                    this@GameActivity
+                )
             recyclerView.layoutManager = LinearLayoutManager(this@GameActivity)
             recyclerView.adapter = gameAdapter
         }

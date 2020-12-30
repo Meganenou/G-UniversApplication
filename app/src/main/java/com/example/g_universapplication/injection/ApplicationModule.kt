@@ -9,6 +9,7 @@ import com.example.g_universapplication.data.repository.UserRepository
 import com.example.g_universapplication.domain.entities.User
 import com.example.g_universapplication.domain.usecase.CreateUserUseCase
 import com.example.g_universapplication.domain.usecase.GetUserUseCase
+import com.example.g_universapplication.presentation.main.AccountViewModel
 import com.example.g_universapplication.presentation.main.MainViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -16,11 +17,9 @@ import java.security.AccessControlContext
 
 val presentationModule = module {
     factory {
-        MainViewModel(
-            get(),
-            get()
-        )
-    }
+        MainViewModel( get(), get()) }
+    factory {
+        AccountViewModel( get(), get()) }
 }
 
 val domainModule = module {

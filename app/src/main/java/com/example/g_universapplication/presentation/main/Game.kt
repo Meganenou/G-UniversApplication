@@ -1,4 +1,4 @@
-package com.example.g_universapplication
+package com.example.g_universapplication.presentation.main
 
 data class Game(
     val name: String,

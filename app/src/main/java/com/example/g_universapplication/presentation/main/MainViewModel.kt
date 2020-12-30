@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.g_universapplication.GameActivity
 import com.example.g_universapplication.domain.entities.User
 import com.example.g_universapplication.domain.usecase.CreateUserUseCase
 import com.example.g_universapplication.domain.usecase.GetUserUseCase
@@ -21,17 +20,32 @@ class MainViewModel(
 
     val loginliveData: MutableLiveData<LoginStatus> = MutableLiveData()
 
-    fun onClickedAccount(emailUser: String, password: String) {
+    fun onClickedSignIn(emailUser: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val user: User? = getUserUseCase.invoke(emailUser)
+            val user: User? = getUserUseCase.invoke(emailUser, password)
             val loginStatus = if (user != null) {
-                LoginSuccess(user.email)
-            } else {
+                if(emailUser.equals(user.email) && emailUser.isNotEmpty()){
+                    if(password!=user.password){
+                        LoginWrongPassword
+                    }else{
+                        LoginSuccess(user.email)
+                    }
+                }else{
+                    LoginNonexistent
+                }
+            }else{
                 LoginError
             }
             withContext(Dispatchers.Main) {
                 loginliveData.value = loginStatus
             }
+        }
+    }
+
+    fun onClickAccount(activity: Activity) {
+        viewModelScope.launch(Dispatchers.IO){
+            val intent = Intent(activity, AccountActivity::class.java)
+            startActivity(activity,intent,null)
         }
     }
 

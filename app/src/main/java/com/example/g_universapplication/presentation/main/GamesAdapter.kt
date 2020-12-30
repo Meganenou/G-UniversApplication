@@ -1,4 +1,4 @@
-package com.example.g_universapplication
+package com.example.g_universapplication.presentation.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.g_universapplication.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.game_row.view.*
 
@@ -16,7 +17,9 @@ class GamesAdapter(val games: List<Game>, var clickListener: OnGameItemClickList
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.game_row, parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(
+            view
+        )
     }
 
     override fun getItemCount() = games.size
