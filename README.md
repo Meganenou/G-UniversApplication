@@ -34,8 +34,7 @@ Application développée en Kotlin
 * _Create an account_ : bouton qui permet d'accéder à l'écran de création de compte.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/63911484/103382256-9f498700-4aee-11eb-8768-4f42f45099b5.jpeg" width="270" height="480"">
-</p>                                                                            
+<img src="https://user-images.githubusercontent.com/63911484/103382256-9f498700-4aee-11eb-8768-4f42f45099b5.jpeg" width="270" height="480""><img src="https://user-images.githubusercontent.com/63911484/103385413-96f74900-4afa-11eb-9941-2ebb729b414c.jpeg" width="270" height="480""></p>                                                                            
                                                                                                                                        
 ### Écran de la création de compte
 Les régions du Monde Pokémon sont répertoriées.
