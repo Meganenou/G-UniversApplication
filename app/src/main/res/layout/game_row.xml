@@ -22,8 +22,8 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="2dp"
-        android:layout_marginStart="32dp"
         android:layout_marginBottom="5dp"
         android:padding="3dp"
         android:textAlignment="center"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toEndOf="@+id/logo"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:text="Oui c'est moi évidemment" />
+        tools:text="Oui c'est moi" />
 
     <TextView
         android:id="@+id/dev"
