@@ -65,6 +65,9 @@ Description de l'_Univers_ du jeu.
 
   <img src="https://user-images.githubusercontent.com/63911484/103384275-1cc4c580-4af6-11eb-88d1-ac1363a84bd5.jpeg" width="150" height="150">
 
+* Fond
+
+<img src="https://user-images.githubusercontent.com/63911484/103385481-ea699700-4afa-11eb-8e4d-5c8fa37190f1.jpeg" width="270" height="480">
 
 ### Sources
 <img src="https://user-images.githubusercontent.com/63911484/81506030-f7c7dc00-92f3-11ea-928e-77ff29f106e1.png" width="90" height="90"> Toutes les images proviennent de _[Pinterest](https://www.pinterest.fr/)_.
