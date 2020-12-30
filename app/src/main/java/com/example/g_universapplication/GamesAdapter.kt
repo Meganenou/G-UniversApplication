@@ -23,12 +23,14 @@ class GamesAdapter(private val games: List<Game>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val game = games[position]
         holder.name.text = game.name
+        holder.dev.text = game.dev
 
         Picasso.get().load(game.logo).into(holder.logo)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.name
+        val dev: TextView = itemView.dev
         val logo: ImageView = itemView.logo
     }
 }
