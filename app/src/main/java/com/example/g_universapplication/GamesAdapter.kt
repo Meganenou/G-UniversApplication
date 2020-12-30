@@ -1,7 +1,5 @@
 package com.example.g_universapplication
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.game_row.view.*
 
 
-class GamesAdapter(private val games: List<Game>, private val context : Context) :
+class GamesAdapter(val games: List<Game>, var clickListener: OnGameItemClickListener) :
     RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,24 +22,28 @@ class GamesAdapter(private val games: List<Game>, private val context : Context)
     override fun getItemCount() = games.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val game = games[position]
-        holder.name.text = game.name
-        holder.dev.text = game.dev
-
-        Picasso.get().load(game.logo).into(holder.logo)
-
-        holder.itemView.setOnClickListener(){
-           @Override
-           fun onClickItem(){
-               val intent = Intent(context, Description::class.java)
-           }
-        }
-
+        holder.initialize(games.get(position),clickListener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.name
         val dev: TextView = itemView.dev
         val logo: ImageView = itemView.logo
+
+        fun initialize(game: Game, action: OnGameItemClickListener) {
+            name.text = game.name
+            dev.text = game.dev
+            Picasso.get().load(game.logo).into(logo)
+
+            itemView.setOnClickListener{
+                action.onItemClic(game, adapterPosition)
+            }
+        }
     }
+
+    interface OnGameItemClickListener{
+        fun onItemClic(game : Game, position: Int)
+    }
+
 }
+

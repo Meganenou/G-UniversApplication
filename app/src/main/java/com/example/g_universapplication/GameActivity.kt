@@ -1,9 +1,9 @@
 package com.example.g_universapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log.d
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.content_game.*
@@ -13,7 +13,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity(), GamesAdapter.OnGameItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +36,28 @@ class GameActivity : AppCompatActivity() {
                 showData(response.body()!!)
             }
         })
+
+        //createGameList()
+
     }
 
     private fun showData(games: List<Game>) {
         recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@GameActivity)
-            adapter = GamesAdapter(games)
+            var gameAdapter = GamesAdapter(games,this@GameActivity)
+            recyclerView.layoutManager = LinearLayoutManager(this@GameActivity)
+            recyclerView.adapter = gameAdapter
         }
     }
+
+    override fun onItemClic(game: Game, position: Int) {
+        Toast.makeText(this, "Going to "+game.name,Toast.LENGTH_LONG).show()
+        val intent = Intent(this, Description::class.java)
+        intent.putExtra("landscape", game.landscape)
+        intent.putExtra("univers", game.univers)
+        intent.putExtra("logo", game.logo)
+
+        startActivity(intent)
+    }
+
 }
+
