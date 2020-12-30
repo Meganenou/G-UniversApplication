@@ -46,7 +46,7 @@ Les régions du Monde Pokémon sont répertoriées.
 
 ### Écran de la liste des jeux
 Les différents jeux sont répertoriées.
-* Utilisation de la `RecyclerView` et de l'[gameAPI](https://github.com/Meganenou/G-UniversApplication/blob/master/gameAPI.json).
+* Utilisation de la `RecyclerView` et de le [gameAPI](https://github.com/Meganenou/G-UniversApplication/blob/master/gameAPI.json).
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/63911484/103383595-94ddbc00-4af3-11eb-9d5d-7528d900947a.jpeg" width="270" height="480">
@@ -55,7 +55,7 @@ Les différents jeux sont répertoriées.
 ### Écran détail d'un jeu
 Description de l'_Univers_ du jeu.
 
-* Utilisation de l'[gameAPI](https://github.com/Meganenou/G-UniversApplication/blob/master/gameAPI.json) et de la `ScrollView`.
+* Utilisation de le [gameAPI](https://github.com/Meganenou/G-UniversApplication/blob/master/gameAPI.json) et de la `ScrollView`.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/63911484/103384138-9314f800-4af5-11eb-8cc9-a8bc632f680f.jpeg" width="270" height="480">
@@ -64,9 +64,7 @@ Description de l'_Univers_ du jeu.
 ### Design & Création
 * Logo
 
-<p align="center">
   <img src="https://user-images.githubusercontent.com/63911484/103384275-1cc4c580-4af6-11eb-88d1-ac1363a84bd5.jpeg" width="150" height="150">
-</p>
 
 
 ### Sources
