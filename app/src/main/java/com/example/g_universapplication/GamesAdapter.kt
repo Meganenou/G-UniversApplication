@@ -1,5 +1,7 @@
 package com.example.g_universapplication
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.game_row.view.*
 
-class GamesAdapter(private val games: List<Game>) :
+
+class GamesAdapter(private val games: List<Game>, private val context : Context) :
     RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,6 +29,14 @@ class GamesAdapter(private val games: List<Game>) :
         holder.dev.text = game.dev
 
         Picasso.get().load(game.logo).into(holder.logo)
+
+        holder.itemView.setOnClickListener(){
+           @Override
+           fun onClickItem(){
+               val intent = Intent(context, Description::class.java)
+           }
+        }
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
