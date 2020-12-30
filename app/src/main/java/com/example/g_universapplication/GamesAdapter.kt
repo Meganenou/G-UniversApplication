@@ -24,7 +24,7 @@ class GamesAdapter(private val games: List<Game>) :
         val game = games[position]
         holder.name.text = game.name
 
-        //Picasso.get().load(game.logo).into(holder.logo)
+        Picasso.get().load(game.logo).into(holder.logo)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
