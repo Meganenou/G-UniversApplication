@@ -21,7 +21,7 @@ class GameActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com")
+            .baseUrl("https://raw.githubusercontent.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
